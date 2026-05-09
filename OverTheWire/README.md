@@ -3,6 +3,6 @@ This repository contains step-by-step walkthroughs, explanations and notes for t
 
 OverTheWire wargames are designed to help learners build strong fundamentals in Linux, networking, cryptography, web security, and binary exploitation through hands-on practice.
 
-<br><img width="1598" height="691" alt="Screenshot" src="https://github.com/user-attachments/assets/d88ad60b-f813-42ab-8b4e-bf79426cd881"/><br>
+<img width="1920" height="789" alt="Screenshot_2026-05-09_12_38_33" src="https://github.com/user-attachments/assets/def6876e-13c8-48a8-8877-36b2eca7b7e1" />
 
 **Keep Learning**
