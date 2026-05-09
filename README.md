@@ -16,23 +16,23 @@ The purpose of this repository is to document:
 
 ---
 
-# Platforms Covered
+## Platforms Covered
 
-## OverTheWire
+### OverTheWire
 Bandit, Natas, Leviathan, Krypton, and more.
 
-## PicoCTF
+### PicoCTF
 Web exploitation, cryptography, reverse engineering, forensics, binary exploitation, and general skills.
 
-## Hack The Box
+### Hack The Box
 Machine walkthroughs, privilege escalation, enumeration techniques, and post-exploitation.
 
-## TryHackMe
+### TryHackMe
 Learning paths, practical labs, networking, Active Directory, web security, and red teaming fundamentals.
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -65,36 +65,7 @@ Learning paths, practical labs, networking, Active Directory, web security, and 
 
 ---
 
-# Writeup Format
-
-Each writeup may contain:
-
-- Challenge description
-- Enumeration process
-- Vulnerability analysis
-- Exploitation steps
-- Scripts/commands used
-- Lessons learned
-- References/resources
-
----
-
-# Tools Commonly Used
-
-- Linux
-- Python
-- Burp Suite
-- Wireshark
-- Nmap
-- Gobuster
-- John the Ripper
-- Hashcat
-- Ghidra
-- Pwntools
-
----
-
-# Goals
+## Goals
 
 - Improve practical cybersecurity skills
 - Build consistent documentation habits
@@ -103,17 +74,17 @@ Each writeup may contain:
 
 ---
 
-# Disclaimer
+## Disclaimer
 
 These writeups are created for educational purposes only.  
 Do not use any techniques or tools mentioned here on systems you do not own or have permission to test.
 
 ---
 
-# Connect
+## Conclusion
 
 Feel free to explore the repository and learn along with me.
 
-```bash
+```
 “Learn. Break. Understand. Repeat.”
 ```
