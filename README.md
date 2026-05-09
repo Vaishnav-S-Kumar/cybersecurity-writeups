@@ -1,62 +1,119 @@
-# PicoCTF-Writeups
+# Cybersecurity Writeups
 
-This repository contains categorized writeups for various PicoCTF challenges, organized by difficulty level and challenge category for easy navigation.
+A collection of my cybersecurity challenge writeups, notes, and learning journey across different platforms including:
 
-## Purpose
+- OverTheWire
+- PicoCTF
+- Hack The Box (HTB)
+- TryHackMe (THM)
+- Other CTFs and labs
 
-This repository serves as:
+The purpose of this repository is to document:
+- My learning process
+- Problem-solving approaches
+- Tools and techniques used
+- Concepts learned from each challenge
 
-- A personal knowledge base
-- A reference for CTF learners
-- A structured archive of solved PicoCTF challenges
+---
 
-## Repositery Structure
+# Platforms Covered
 
-Each challenge is documented in one of the following ways:
+## OverTheWire
+Bandit, Natas, Leviathan, Krypton, and more.
 
-1. Single Markdown File
-If the challenge does not include any downloadable files or artifacts, the writeup is stored directly as:
-```
-challenge_name.md
-```
-2. Directory with Files + Writeup
-If the challenge includes files/artifacts (e.g., binaries, PCAPs, images), it is stored as:
-```
-challenge_name/
-├── <provided_files>
-└── challenge_name.md
-```
-Each challenge is stored based on its difficulty and category. The repositery is organized in the following hierarchy:
-```
+## PicoCTF
+Web exploitation, cryptography, reverse engineering, forensics, binary exploitation, and general skills.
+
+## Hack The Box
+Machine walkthroughs, privilege escalation, enumeration techniques, and post-exploitation.
+
+## TryHackMe
+Learning paths, practical labs, networking, Active Directory, web security, and red teaming fundamentals.
+
+---
+
+# Repository Structure
+
+```text
 .
-├── Easy/
-│   ├── Web Exploitation/
-│   ├── Cryptography/
-│   ├── Reverse Engineering/
-│   ├── Forensics/
-│   ├── General Skills/
-│   ├── Binary Exploitation/
-│   └── Blockchain/
+├── OverTheWire/
+│   ├── Bandit/
+│   └── Natas/
 │
-├── Medium/
-│   ├── Web Exploitation/
-│   ├── Cryptography/
-│   ├── Reverse Engineering/
+├── PicoCTF/
+│   ├── Web/
+│   ├── Crypto/
 │   ├── Forensics/
-│   ├── General Skills/
-│   ├── Binary Exploitation/
-│   └── Blockchain/
+│   └── Binary-Exploitation/
 │
-├── Hard/
-│   ├── Web Exploitation/
-│   ├── Cryptography/
-│   ├── Reverse Engineering/
-│   ├── Forensics/
-│   ├── General Skills/
-│   ├── Binary Exploitation/
-│   └── Blockchain/
+├── HackTheBox/
+│   ├── Easy/
+│   ├── Medium/
+│   └── Hard/
+│
+├── TryHackMe/
+│   ├── Beginner/
+│   ├── Networking/
+│   └── PrivEsc/
+│
+└── Notes/
+    ├── Linux/
+    ├── Networking/
+    ├── Reverse-Engineering/
+    └── Web-Security/
 ```
-## Disclaimer
 
-Writeup of challenges with similar model of obtaining the flag is not documented !!!
+---
 
+# Writeup Format
+
+Each writeup may contain:
+
+- Challenge description
+- Enumeration process
+- Vulnerability analysis
+- Exploitation steps
+- Scripts/commands used
+- Lessons learned
+- References/resources
+
+---
+
+# Tools Commonly Used
+
+- Linux
+- Python
+- Burp Suite
+- Wireshark
+- Nmap
+- Gobuster
+- John the Ripper
+- Hashcat
+- Ghidra
+- Pwntools
+
+---
+
+# Goals
+
+- Improve practical cybersecurity skills
+- Build consistent documentation habits
+- Track progress across different security domains
+- Prepare for CTFs, internships, and real-world security work
+
+---
+
+# Disclaimer
+
+These writeups are created for educational purposes only.  
+Do not use any techniques or tools mentioned here on systems you do not own or have permission to test.
+
+---
+
+# Connect
+
+Feel free to explore the repository and learn along with me.
+
+```bash
+“Learn. Break. Understand. Repeat.”
+```
