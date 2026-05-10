@@ -113,5 +113,38 @@ OR
 test ; cat /filepath
 ```
 
-but methods will display the contents of the file.
+but methods will display the contents of the file, i.e password for the next level.
+
+## Level 10
+
+Level 10 has the same outline and functionality as level 9 except it displays an additional text which is as follows:
+```
+For security reasons, we now filter on certain characters
+
+```
+So to find the change use the View sourcecode option to analyse the script. Th code has following
+```
+<pre>
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    if(preg_match('/[;|&]/',$key)) {
+        print "Input contains an illegal character!";
+    } else {
+        passthru("grep -i $key dictionary.txt");
+    }
+}
+?>
+</pre>
+```
+After analysis, it is clear that metacharacters are not allowed in the input form. So to bypass this one way is by exploiting ```grep```. Since ```grep``` can take two or more files as input to search a specific word, the same idea can be applied here. Use a single alphabet as input and rest as the file path which we have found in the earlier challenges. i.e
+```
+<alphabet> /etc/natas_webpass/natas<number>
+```
+and the password will displayed(if the character is part of the password or try changing the character). 
  
