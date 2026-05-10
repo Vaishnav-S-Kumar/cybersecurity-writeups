@@ -40,3 +40,78 @@ About
 This is the about page
 ```
 As the page changes, the URL also changes ```http://natas7.natas.labs.overthewire.org/index.php?page=<name>``` the <name> can be about or home. Which could mean this could be a injection point, to find the right payload start by checking the source code. The code contains a comment with a file path. Place the file path in place of <name>.
+
+## Level 8
+
+Level 8 has the same layout as level 6 and also have a view sourcecode hyperlink which displays the source code. The php script in the source code is 
+``` 
+<?
+
+$encodedSecret = "3d3d516343746d4d6d6c315669563362";
+
+function encodeSecret($secret) {
+    return bin2hex(strrev(base64_encode($secret)));
+}
+
+if(array_key_exists("submit", $_POST)) {
+    if(encodeSecret($_POST['secret']) == $encodedSecret) {
+    print "Access granted. The password for natas9 is <censored>";
+    } else {
+    print "Wrong secret";
+    }
+}
+?>
+```
+
+Here the secret hardcoded is the encoded version which is passed through multiple, The process is 
+1. Convert secret input to base64
+2. Reverse the base64 text
+3. Convert the text into Hexadecimal
+
+So to get original text, the following process should be done using cyberchef. 
+1. Convert the text using ```From Hex``` option
+2. Reverse the text using ```reverse``` 
+3. Decode the text using ```From Base64``` option
+
+Enter the final text into the input form in the website and submit, The password for the next level is displayed.
+
+## Level 9
+
+The text displayed in this level is 
+```
+Find words containing: 
+```
+Along with a input form and a search button. The function of the website is to display a list of words with following characters eneterd in the input form. 
+
+Also there is a View sourcecode hyperlink which displays the code working behind the scene. The code is as follows
+```
+<pre>
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    passthru("grep -i $key dictionary.txt");
+}
+?>
+</pre>
+```
+After analysis, it is clear that it could be used for OS injection. From previous levels it is clear the password is stored in ```/etc/natas_webpass/natas<no>``` to access the contents of the file use OS injection payloads like 
+1. ```<command> | <command>``` where | or pipe is used execute a command after receiving the output(stdout) of the first command as the input(stdin) for second.
+OR
+2. ```<command> ; <command>``` where ; is used to execute commands sequentially. Even if first one fails second one is executed.
+
+Here, we can use both instead of the first command, use an word and second command as ```cat```. ie
+```
+test | cat /filepath
+```
+OR 
+```
+test ; cat /filepath
+```
+
+but methods will display the contents of the file.
+ 
