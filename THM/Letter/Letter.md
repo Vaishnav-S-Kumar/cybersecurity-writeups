@@ -34,3 +34,6 @@ With all my love,
 Audette
 ```
 
+By using Google lens, we can find the original clean photo of the newspaper. It has news on North pole expedition, which talks about the death of 26 sailors during that operation. 
+
+Now time to look deeper into the subject, After long searching on "North Pole Expetiton, 1925" There was a website which mentioned the name of the crew members and one of the members was a boy, 15 year old. That is our flag for the final part
