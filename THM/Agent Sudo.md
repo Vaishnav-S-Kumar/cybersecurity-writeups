@@ -71,4 +71,20 @@ As we discovered earlier, FTP and SSH is open therefore <user> could be one of t
 ```
 hydra -l <user> -P /path/to/wordlist <IP address> ftp
 ```
-After completing the process, the password for FTP login is printed.
+After completing the process, the password for FTP login is printed/outputed to the terminal.
+
+The FTP portal has 3 files one txt and 2 image file (png & jpg). 
+
+The text file showed the following
+```
+
+Dear agent J,
+
+All these alien like photos are fake! Agent R stored the real picture inside your directory. Your login password is somehow stored in the fake picture. It shouldn't be a problem for you.
+
+From,
+Agent C
+
+```
+
+To see if there is any embeded file use ```binwalk``` on both images
