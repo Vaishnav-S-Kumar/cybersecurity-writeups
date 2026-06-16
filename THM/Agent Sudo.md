@@ -41,3 +41,34 @@ Use your own codename as user-agent to access the site.
 From,
 Agent R
 ```
+
+Capture the request using burpsuite, the request looks like the following
+```
+GET / HTTP/1.1
+Host: 10.113.151.114
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Priority: u=0, i
+```
+Change the ```User-agent``` and try different alphabets. Use Intruder with the wordlist of entire english alphabets. When one of the alphabet is used the output/response changes slightly. An additional attribute called ```location``` is also displayed in the repsonse. 
+
+Use the ```location``` value and use it as web directory in the URL. A different page will appear.
+
+The content of the page is 
+```
+Attention <name>,
+
+Do you still remember our deal? Please tell agent <alphabet> about the stuff ASAP. Also, change your god damn password, is weak!
+
+From,
+Agent R 
+```
+As we discovered earlier, FTP and SSH is open therefore <user> could be one of the users. To find the password use hydra, which is a brute forcing tool.
+```
+hydra -l <user> -P /path/to/wordlist <IP address> ftp
+```
+After completing the process, the password for FTP login is printed.
