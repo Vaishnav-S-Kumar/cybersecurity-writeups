@@ -36,26 +36,9 @@ Learning paths, practical labs, networking, Active Directory, web security, and 
 
 ```text
 .
-├── OverTheWire/
-│   ├── Bandit/
-│   └── Natas/
-│
-├── PicoCTF/
-│   ├── Web/
-│   ├── Crypto/
-│   ├── Forensics/
-│   └── Binary-Exploitation/
-│
-├── HackTheBox/
-│   ├── Easy/
-│   ├── Medium/
-│   └── Hard/
-│
-├── TryHackMe/
-│   ├── Beginner/
-│   ├── Networking/
-│   └── PrivEsc/
-│
+├── CTF Name/
+│   └── Category/
+│           └── Difficulty Level/
 └── Notes/
     ├── Linux/
     ├── Networking/
