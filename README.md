@@ -30,6 +30,8 @@ Machine walkthroughs, privilege escalation, enumeration techniques, and post-exp
 ### TryHackMe
 Learning paths, practical labs, networking, Active Directory, web security, and red teaming fundamentals.
 
+### Google CTF
+
 ---
 
 ## Repository Structure
