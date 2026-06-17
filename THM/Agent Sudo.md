@@ -87,4 +87,64 @@ Agent C
 
 ```
 
-To see if there is any embeded file use ```binwalk``` on both images
+To see if there is any embeded file use ```binwalk``` on both images, the output on one of the image is 
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 528 x 528, 8-bit colormap, non-interlaced
+869           0x365           Zlib compressed data, best compression
+34562         0x8702          Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
+34820         0x8804          End of Zip archive, footer length: 22
+```
+
+which means if we use ```binwalk -e <filename```, it will extract the embeded files. After extraction, a zip file is found. To unzip it requires password, for getting the password use ```zip2john``` which will extract the hash of the password from the zip file. 
+```
+zip2john <filename>.zip > hashfile.txt
+```
+After which the hash is stored in a file, which will later be used along with ```john``` to find the password
+```
+john --wordlist=/path/to/wordlist hashfile.txt
+```
+After the password for extracting the file is found, use the ```7z``` command to extract the file.
+```
+7z x <file>.zip
+```
+The txt file inside the zip file has the following contents,
+```
+Agent C,
+
+We need to send the picture to 'QXJlYTUx' as soon as possible!
+
+By,
+Agent R
+```
+A specific phrase within the txt file is enocde using base64 which can decoded by using the following command
+```
+echo <phrase> | base64 -d
+```
+The next section of the challenge talks about a steg password which means the image which did not had a embeded file was hiding a something with the image using steghide. This can be extracted by using the command
+```
+steghide extract -sf <filename>
+```
+when the passphrase is prompted, enter the decoded version of the phrase found earlier. This extracts data to a txt file. The contents of the file is:
+```
+Hi <name1>,
+
+Glad you find this message. Your login password is hackerrules!
+
+Don't ask me why the password look cheesy, ask agent R who set this password for you.
+
+Your buddy,
+<name2>
+```
+Therefore, using the above information we can log into the machine using SSH. ```ssh <username>@<IP Address>```
+After Logging in, the user-flag file is present in the home directory, to get the root-flag, the user should get root privileges which means privilege escalation.
+
+For privilege escalation start by finding the version of the sudo ```sudo -V``` 
+After finding out the version, google if the version has any security bypass vulnerability, The vulnerability expolited for the gaining root access is ```CVE-2019-14287```
+
+Where the sudo command is run with user ID -1 or 4294967295
+```
+sudo -u#-1 bash
+```
+After running this command, user changes to root. Go to the root directory and it has the root file.
