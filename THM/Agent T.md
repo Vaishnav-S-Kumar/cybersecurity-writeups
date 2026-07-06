@@ -11,7 +11,7 @@ Agent T uncovered this website, which looks innocent enough, but something seems
 Deploy the machine and connect to the network using openvpn configuration, 
 ```
 sudo openvpn <OpenVPN config file>
-```com
+```
 Enumerate the IP address of the machine using nmap, i.e.
 ```
 sudo nmap -sV -O -v -T4 <IP address>
