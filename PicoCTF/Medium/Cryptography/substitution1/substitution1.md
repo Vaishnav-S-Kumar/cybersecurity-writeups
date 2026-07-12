@@ -12,7 +12,7 @@ To find the key to print the original text use frequescy analysis to find the mo
 ```
 for i in {A..Z}; do cat message.txt|tr '[:lower:]' '[:upper:]' |tr -cd $i| wc -c| tr -d "\n"; printf " $i \n"; done | sort -nr
 ```
-he result for the above command would be
+The result for the above command would be
 ```
 <Number of occurence> <Alphabet> 
 ```
