@@ -10,6 +10,9 @@ Launch the instance and an IP address with a port number is displayed, copy and 
 
 The website consist of normal support form with Name, Email address and Descritpion. Enter test/dummy information and click submit Ticket.
 
+<img width="804" height="793" alt="image" src="https://github.com/user-attachments/assets/bacf15f6-1658-45dc-bb91-9f55ad77a4e1" />
+
+
 A text is displayed, saying "No session token provided". To find the cause check the source code using "Veiw Page Source" 
 
 In the Javascript section, The Flag is displayed. Copy the flag and finish the challenge.
