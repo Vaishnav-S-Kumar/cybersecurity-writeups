@@ -67,7 +67,9 @@ Use ```get``` command to download the files;
 ```
 get <file-name>
 ```
-The website hosted on port 80, contains an image from the anime "Cowboy Bebop", with text written as dialouge from each characters
+The website hosted on port 80, contains an image from the anime "Cowboy Bebop", with text written as dialouge from each characters;
+
+<img width="1004" height="1004" alt="screen" src="https://github.com/user-attachments/assets/a969e5f3-34fc-4578-90cf-5fe096ad3091" />
 
 The two files downloaded from FTP contains information on the user and different passwords combination;
 Content of task.txt
